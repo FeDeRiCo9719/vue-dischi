@@ -1,0 +1,15 @@
+@import './variables.scss';
+// ---------------------- RESET ----------------------/
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+// ---------------------- COMMON ----------------------/
+header {
+    background-color: #2E3A46;
+}
+body {
+    background-color: #192530;
+}
