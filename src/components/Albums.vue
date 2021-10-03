@@ -1,28 +1,38 @@
 <template>
-  <section>
+  <section class="AlbumSection">
     <div class="container">
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
-      <div>a</div>
+      <div class="boxAlbum" v-for="(item, index) in songs.response" :key="index">
+        <Album :info="item" />
+      </div>
     </div>
-    <Album/>
   </section>
 </template>
 
 <script>
-import Album from './Album.vue'
+import axios from 'axios';
+import Album from './Album.vue';
 
 export default {
   name: 'Albums',
     components: {
     Album
+  },
+
+  data() {
+    return {
+      songs: {}
+    }
+  },
+
+  created() {
+    axios
+    .get('https://flynn.boolean.careers/exercises/api/array/music')
+    .then( (res) => {
+      // console.log( res.data);
+      this.songs = res.data;
+      console.log( this.songs.response );
+
+    }); 
   },
   props: []
 }
@@ -39,19 +49,19 @@ export default {
     align-items: center;
 
     .container {
-      background-color: rgba(0, 0, 0, 0.479);
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 30px;
+      text-align: center;
 
-      div {
-        background-color: rgba(164, 202, 183, 0.479);
+      .boxAlbum {
+        background-color: #2E3A46;
         width: 180px;
-        height: 300px;
+        height: 350px;
+        padding: 20px;
       }
-
-    }
+    }        
   }
 
 </style>

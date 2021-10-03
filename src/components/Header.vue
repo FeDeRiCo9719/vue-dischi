@@ -22,7 +22,6 @@ header {
     .logoBox {
         height: 80px;
         padding: 15px;
-        background-color: rgba(96, 96, 224, 0.144);
 
         img {
             height: 100%;
