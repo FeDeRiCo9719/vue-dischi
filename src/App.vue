@@ -1,6 +1,7 @@
 <template>
   <div id="app">    
-    <Header/>
+    <Header @choice="print"/>
+    <!-- <Header/> -->
     <Albums/>
   </div>
 </template>
@@ -14,6 +15,11 @@ export default {
   components: {
     Header,
     Albums
+  },
+  methods: {
+    print(text) {
+      console.log(text);
+    }
   }
 }
 </script>

@@ -4,20 +4,35 @@
             <div class="logoBox">
                 <img src="@/assets/img/spotify-logo.png" alt="LogoImg">
             </div>
-            <SearchBar/>
+            
+            <select name="" id=""  v-model="genreSelected" @change="$emit('choice', genreSelected)" >  <!-- @change="SelectGenre" -->
+                <option disabled value="">Select a Genre</option>
+                <option>Pop</option>
+                <option>Jazz</option>
+                <option>Metal</option>
+                <option>Rock</option>
+            </select> 
+            <!-- <span>{{genreSelected}}</span> -->
         </div>
     </header>
 </template>
 
 <script>
-import SearchBar from './SearchBar.vue'
 
 export default {
-  name: 'Header',
-  components: {
-    SearchBar
-  },
-  props: []
+    name: 'Header',
+    data() {
+        return {
+            genreSelected:'',
+        }
+    },
+
+    // methods: {
+    //     SelectGenre() {
+    //         console.log(this.genreSelected);
+    //         this.$emit('choice', this.genreSelected )
+    //     }
+    // }
 }
 </script>
 
@@ -46,5 +61,10 @@ header {
         }
     }
 
+    select {
+        padding: 5px ;
+        border-radius: 5px;
+        outline: none;
+    }
 }
 </style>
