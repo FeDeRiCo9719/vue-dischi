@@ -43,7 +43,7 @@ export default {
 
   section {
     height: calc(100vh - 80px);
-    padding: 0px 400px;
+    // padding: 0px 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,6 +54,7 @@ export default {
       flex-wrap: wrap;
       gap: 30px;
       text-align: center;
+      width: 60%;
 
       .boxAlbum {
         background-color: #2E3A46;
